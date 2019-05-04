@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <table>
+                <tr>
+                  <th>Amount</th>
+                  <th>From currency</th>
+                  <th>To currency</th>
+                  <th></th>
+                </tr>
+                <tr>
+                  <td>
+                    <input type="number" id="money">
+                  </td>
+                  <td>
+                        <select id="fromMoney">
+                            <option value="vietnam">VietNam</option>
+                            <option value="usd">USD</option>
+                        </select>
+                  </td>
+                  
+                  <td>
+                      <select id="toMoney">
+                            <option value="usd">USD</option>
+                            <option value="vietnam">VietNam</option>
+                      </select></td>
+                  <td><button type="button" onclick="convertMoney();">Convert</button>
+                  </td>
+                </tr>
+              </table>
+
+              <p id="result" >
+                  tt
+              </p>
+
+              <script>
+                 function convertMoney() {
+                     const usd_1 = 23000;
+                    var moneyAmoun = document.getElementById('money').value;
+                    var result = document.getElementById("result");
+                    var fromMoney = document.getElementById('fromMoney').value;
+                    var toMoney = document.getElementById('toMoney').value;
+                    var convertMoney;
+                    if(fromMoney === 'vietnam' && toMoney === 'usd') {
+                        convertMoney  = moneyAmoun / usd_1;  
+                    } else {
+                        if (fromMoney === 'usd' && toMoney === 'vietnam') {
+                            convertMoney  = moneyAmoun * usd_1;     
+                        } else {
+                            convertMoney = moneyAmoun;
+                        }
+                    }
+
+                   
+                    result.innerHTML = convertMoney;
+                 }
+              </script>
+</body>
+</html>

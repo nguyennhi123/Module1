@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <table>
+                <tr>
+                  <th>Caculator</th>
+                </tr>
+                <tr>
+                  <td>
+                    <input id="1" value="">
+                    <input id="2" value="">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <button type="button" onclick="(addition());">addition(+)</button>
+                    <button type="button" onclick="(subtraction());">subtraction(-)</button>
+                    <button type="button" onclick="(multiplication());">multiplication(x)</button>
+                    <button type="button" onclick="(division());">division(/)</button>
+                  </td>
+                  </tr>
+                </table>
+
+                <p id="result" >
+                </p>
+                <script>
+                       function addition(){
+                         alert("123");
+                         var number1 = document.getElementById("1").value;
+                         let number11 = parseInt(number1);
+                         var number2 = document.getElementById("2").value;
+                         let number22 = parseInt(number2);
+                         var result = number11 + number22;
+                         document.getElementById("result").innerHTML =  result;
+                       }
+                       </script>
+                <script>
+                       function subtraction(){
+                        var number1 = document.getElementById("1").value;
+                         let number11 = parseInt(number1);
+                         var number2 = document.getElementById("2").value;
+                         let number22 = parseInt(number2);
+                         var result = number11 - number22;
+                         document.getElementById("result").innerHTML =  result;
+                  }
+                </script> 
+               <script>
+                  function multiplication(){
+                  var number1 = document.getElementById("1").value;
+                   let number11 = parseInt(number1);
+                   var number2 = document.getElementById("2").value;
+                   let number22 = parseInt(number2);
+                   var result = number11 * number22;
+                   document.getElementById("result").innerHTML =  result;
+                  }
+          </script>
+          <script>
+              function division(){
+                alert("123");
+              var number1 = document.getElementById("1").value;
+               let number11 = parseInt(number1);
+               var number2 = document.getElementById("2").value;
+               let number22 = parseInt(number2);
+               var result = number11 / number22;
+               document.getElementById("result").innerHTML =  result;
+              }
+      </script>
+
+</body>
+</html>
