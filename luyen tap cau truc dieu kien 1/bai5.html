@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let kt=parseFloat(prompt('diem kiem tra?'),'');
+        let gk=parseFloat(prompt('diem giua ki?'),'');
+        let ck=parseFloat(prompt('diem cuoi ki?'),'');
+        let TB=(kt+gk*2+ck*7)/10;
+        let output= (TB>=8) ? 'hoc sinh gioi' : (TB>=6.5) ? 'hoc sinh kha' : (TB>=5) ? 'hoc sinh trung binh':'hoc sinh yeu';
+        alert(output);
+    </script>
+</body>
+</html>

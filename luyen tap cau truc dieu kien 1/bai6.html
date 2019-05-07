@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let doanhso = parseFloat(prompt('doanhso = ?'));
+        let hoahong1 = doanhso * (5/100) ;
+        let hoahong2 = doanhso* (10/100);
+        let hoahong3 = doanhso*(15/100);
+        if (doanhso>= 100){
+        alert (hoahong3);
+    }   else
+            if(doanhso>=50){
+                alert (hoahong2);
+            } else{
+                alert (hoahong1);
+            }
+    </script>
+</body>
+</html>

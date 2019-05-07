@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <tr>
+        <td>
+            <input id ="1", value=''>
+            <button type="button" onclick="(tinhsongay());">tinh so ngay</button>
+        </td>  
+    </tr>   
+    <p id = 'result'>
+        Cho Hien thi o day
+    </p>   
+    <script>
+        function tinhsongay(){
+            var month = parseInt(document.getElementById('1').value);
+            var result= document.getElementById('result');
+            switch(month)
+            {   case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                    result.innerHTML = 'thang ' + month + ' co 31 ngay';
+                    break;
+                case 2:
+                    result.innerHTML = 'thang 2 co 28 hoac 29 ngay';
+                    break;
+                default:
+                    result.innerHTML = 'thang ' + month + ' co 30 ngay';
+            }  
+        }
+        
+                 
+    </script>
+    
+</body>
+</html>

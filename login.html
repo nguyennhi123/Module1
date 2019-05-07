@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var value = prompt('enter the usename', '');
+        if (value === 'admin'){
+            alert('pass');
+            var pass = prompt('password', '');
+            if (pass === 'the master'){
+                alert('welcome');
+            } else if (pass === ''){
+                alert('canceled');
+            } else {
+                alert('wrong password');
+            } 
+        }else if (value === ''){
+            alert('canceled');
+        }else {
+            alert("i don't know");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let height = parseFloat(prompt('height?', '') );
+        let weight = parseFloat(prompt('weight?', ''));
+        let bmi = weight/(height*height);
+        let output = (bmi <18)? 'underweight':(bmi<25)? 'nomal':(bmi<30)? 'overweight': 'obese';
+        alert (output);
+    </script>
+</body>
+</html>

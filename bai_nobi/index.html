@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body onload="docReady()">
+        <img id="pikachu" src="images/pikachu.png" style="position:absolute;left:0; top:0;" height="100" width="80"/>
+    
+    <script>
+        const MOVE_RIGHT = 39;
+        const MOVE_LEFT = 37;
+        const MOVE_UP = 38;
+        const MOVE_DOWN = 40;
+        function docReady() 
+        {
+            window.addEventListener('keydown', moveSelection);
+        }
+
+        function moveSelection(evt) {
+            switch (evt.keyCode) {
+                case MOVE_LEFT:
+                    // leftArrowPressed();
+                    moveLeft();
+                    break;
+                case MOVE_RIGHT:
+                    // console.log('QUa trai');
+                    moveRight();
+                    break;
+                case MOVE_UP:
+                    // upArrowPressed();
+                    moveUp();
+                    break;
+                case 40:
+                    // downArrowPressed();
+                    moveDown();
+                    break;
+            }
+        }
+
+        function moveRight()
+        {
+            var pika = document.getElementById("pikachu");
+            pika.style.left = parseInt(pika.style.left) + 10 + 'px';
+        }
+        function moveLeft() {
+            var pika = document.getElementById("pikachu");
+            pika.style.left = parseInt(pika.style.left) - 10 + 'px';
+        }     
+        function moveUp() {
+            let pika = document.getElementById("pikachu");
+            pika.style.top = parseInt(pika.style.top) - 10 + 'px';
+        }
+        function moveDown() {
+            var pika = document.getElementById("pikachu");
+            pika.style.top = parseInt(pika.style.top) + 10 + 'px';
+        }
+    </script>
+</body>
+</html>
