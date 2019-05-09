@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<form style = "line-height : 30px">
+<fieldset>
+    <legend>BAI TAP NHAP NHIET DO</legend>
+    Nhap nhiet do<input type="text", id="do"><br>
+    <input type="button" onclick="kiemtra()" value="kiemtra">
+    <div id="kiemtra"></div>
+</fieldset>
+<script>
+    function kiemtra(){
+        let c = parseInt(document.getElementById('do').value);
+        if (c > 100){
+            document.getElementById('kiemtra').innerHTML ="giam nhiet do";
+        }else
+            if (c < 20){
+                document.getElementById('kiemtra').innerHTML = "tang nhiet do";
+            }else{
+                document.getElementById('kiemtra').innerHTML ="nhiet do binh thuong";
+            }
+    }
+</script>
+</body>
+</html>

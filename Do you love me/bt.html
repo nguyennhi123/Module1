@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="position: absolute; left: 550px; top: 250px; color: blue">Do you love me?</h1><br>
+    <input type="button" value="co" onclick="yes()" style="position:absolute; background : red; left: 620px; top: 320px; color:chartreuse;">
+    <input type="button" value="khong" id="1" onmouseover="no()" style="position: absolute; background: black; left: 670px; top: 320px; color: blanchedalmond;">
+<script>
+    let a = null;
+    a = document.getElementById("1");
+    b = window.innerWidth;
+    c = window.innerHeight;
+    function yes(){
+        alert("<3");
+    }
+    function no(){
+        a.style.left = Math.random ()* b + "px";
+        a.style.top = Math.random()* c + "px";
+    }
+</script>
+            
+        
+    
+</body>
+</html>
