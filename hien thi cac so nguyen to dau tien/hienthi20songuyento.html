@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset style="font-size: 20px;">
+        <legend>hien thi so nguyen to</legend>
+        nhap so<input type="number" id="numberInput"><br>
+        <input type="button" onclick="kiemtra()" value='kiemtra'>
+    </fieldset>
+    <script>
+        
+
+        function Nnguyento(a){ 
+            if (a <= 1) return false;
+            for(i = 2 ; i < a -1; i++){
+                if (a%i === 0) return false;
+            }
+            return true;
+        }
+
+        function kiemtra (){
+            let num = + document.getElementById('numberInput').value;
+            let count = 0;
+            let N = 2;
+            let kq = '';
+            while(count < num){
+                if(Nnguyento(N) ){
+                    kq = kq + N + ' ';
+                    
+                    count++;
+                }  
+                N++;     
+            }
+            document.write(kq);
+        }
+
+       
+
+    
+    </script>
+</body>
+</html>

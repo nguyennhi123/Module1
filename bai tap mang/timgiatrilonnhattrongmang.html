@@ -8,14 +8,16 @@
 </head>
 <body>
     <script>
-    let a = null;
-        do {
-            a = parseInt(prompt('nhap vao so tu 1 den 10'));
-            //alert ('so ban vua nhap la:' + a);
+        let x = [1,3,4,6,8,11,12];
+        let max = x[0];
+        let index = 0;
+        for(i=1; i< x.length; i++){
+            if (x[i] > max){
+                max = x[i];
+                index = i;
+            }
         }
-        while ( a <  0 || a > 10);
-        alert ('so ban vua nhap la:' + a);
-
+        alert("max "+ max + " at position " + index);
     </script>
     
 </body>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset style="font-size: 20px;">
+        english  <input type="text" id="input text"><br>
+        <input type="button" onclick="kiemtra()" value="kiemtra">
+        <div id="vietnamese"></div>
+    </fieldset>
+</body>
+<script>
+    function kiemtra(){
+    let english = document.getElementById("input text").value;
+    let eng = ['hello','hi','good bye','good morning','good evening', 'good night'];
+    let vi = ['xin chao', 'chao', 'chao buoi sang', 'chao buoi toi', 'chuc ngu ngon'];
+    for(i = 0; i < eng.length;i++){
+        if (english===eng[i]){
+            document.getElementById("vietnamese").innerHTML = vi[i];
+            break;
+        } else{
+            document.getElementById("vietnamese").innerHTML = 'khong co du lieu';
+        }
+    }
+    }
+
+</script>
+</html>

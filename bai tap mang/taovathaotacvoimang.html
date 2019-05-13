@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            padding-top: 50px
+        }
+
+        ;
+    </style>
+</head>
+
+<body>
+    sample screen<br><br><input type="text" , id="nhap">
+    <input type="button" onclick="phantu()" value="add">
+    <input type="button" onclick="khong()" value="display">
+    <div id="result"></div>
+    <script>
+        let x = 0;
+        let array = [];
+        function phantu() {
+            array[x] = + document.getElementById('nhap').value;
+            alert("phan tu: " + array[x] + " vi tri " + x);
+            x++;
+            document.getElementById('nhap').innerHTML = '';
+        }
+        function khong() {
+            let e = '</hr>';
+            for (let i = 0; i < array.length; i++) {
+                e += "phan tu " + i + ' = ' + array[i] + '<br>';
+            }
+            document.getElementById('result').innerHTML = e;
+        }
+
+    </script>
+</body>
+
+</html>

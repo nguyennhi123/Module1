@@ -8,15 +8,17 @@
 </head>
 <body>
     <script>
-    let a = null;
-        do {
-            a = parseInt(prompt('nhap vao so tu 1 den 10'));
-            //alert ('so ban vua nhap la:' + a);
-        }
-        while ( a <  0 || a > 10);
-        alert ('so ban vua nhap la:' + a);
-
+    let i = [1,2,3,4,6,7];
+    let first = 0;
+    let last = i.length - 1;
+    while (first < last){
+        let a = i[first];
+        i[first]= i[last];
+        i[last] = a;
+        first++;
+        last--;
+    }
+    document.write(i);
     </script>
-    
 </body>
 </html>
