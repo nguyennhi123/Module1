@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    nhap so<input type="number" id="number">
+    <input type="button" onclick="binhphuong()" value="binhphuong">
+    <p id="binhphuong"></p>
+</body>
+<script>
+    function binhphuong() {
+        let number = + document.getElementById('number').value;
+        let binhphuong = number ** 2
+        document.getElementById('binhphuong').innerHTML = 'binh phuong la: ' + binhphuong;
+    }
+</script>
+
+</html>

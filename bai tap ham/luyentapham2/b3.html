@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    nhap so<input type="number" id="number">
+    <input type="button" onclick="giaithua()" value="giaithua">
+    <p id="output"></p>
+</body>
+<script>
+    function giaithua() {
+        let number = + document.getElementById('number').value;
+        result = 1;
+        if (number < 0) {
+            document.getElementById("output").innerHTML = 'false';
+        } else {
+            if (number === 0 || number === 1) {
+                document.getElementById("output").innerHTML = result;
+            } else {
+                for (let i = number; i > 0; i--) {
+                    result *= i;
+
+                }
+                document.getElementById("output").innerHTML = result;
+            }
+
+        }
+
+    }
+
+</script>
+
+</html>

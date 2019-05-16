@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra ký tự số</title>
+</head>
+
+<body>
+    nhap vao day<input type="text" id="number">
+    <input type="button" onclick="kiemtra()" value="kiemtra">
+    <p id="ketqua"></p>
+</body>
+<script>
+    function kiemtra(number) {
+        let a = +document.getElementById('number').value
+        if (isNaN(a)) { document.getElementById('ketqua').innerHTML = 'false' }
+        else { document.getElementById('ketqua').innerHTML = 'true' };
+    }
+
+</script>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    nhap vao day<input type="number" id="num"><br>
+    <input type="button" onclick="nhap()" value="nhap vao">
+    <input type="button" onclick="daonguoc()" value="dao nguoc">
+    <p id="show">Show Mang</p>
+</body>
+<script>
+    let array = [];
+    //let array = [1,2,3,4,5,6,7];
+    //alert(array.join(','));
+     let x = 0;
+     function nhap(){
+         array[x] = + document.getElementById('num').value;
+         // alert (array);
+         x++;
+        document.getElementById('num').value = '';
+         //console.log(array);
+          document.getElementById('show').innerHTML = array;
+     }
+    function daonguoc(){
+    array.reverse();
+    alert(array.join(','));
+}
+
+</script>
+</html>

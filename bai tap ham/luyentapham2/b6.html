@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    nhap vao day<input type="text" id="number">
+    <input type="button" onclick="kiemtra()" value="kiemtra">
+    <p id="ketqua"></p>
+</body>
+<script>
+    function kiemtra() {
+        a = +document.getElementById('number').value;
+        if (a > 0) {
+            document.getElementById('ketqua').innerHTML = true;
+        } else {
+            document.getElementById('ketqua').innerHTML = false;
+        }
+    }
+
+</script>
+
+</html>

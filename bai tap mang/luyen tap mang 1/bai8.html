@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    nhap so<input type="number" id="number"><br>
+    <input type="button" onclick="nhapso()" value="nhap">
+    <p id="demo"></p><br>
+    <input type="button" onclick="sapxep()" value="sapxep">
+    <p id="result"></p>
+</body>
+<script>
+    let array = [];
+    let x = 0;
+    function nhapso() {
+        array[x] = + document.getElementById("number").value;
+        x++;
+        document.getElementById("number").value = '';
+        document.getElementById('demo').innerHTML = array;
+    }
+    function sapxep() {
+        array.sort();
+        array.reverse();
+        document.getElementById('result').innerHTML = (array.join(','));
+
+    }
+
+
+
+</script>
+
+</html>

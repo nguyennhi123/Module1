@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <p>
+            <label>nhap so</label>
+            <input type="number" id="inputnumber" placeholder="inputnumber" oninput="isnumberprime(this.value)"
+                onchange="isnumberprime(this.value)">
+
+        </p>
+        <p><span id="ketqua"></span></p>
+    </form>
+    <script>
+        function isprime(number) {
+            if (number < 2) {
+                return "number is not prime"
+            } else {
+                //let count = 0;
+                for (i = 2; i < number - 1; i++) {
+                    if (number % i === 0) {
+                        return "number is not prime"
+                    }
+                } return "number is prime"
+            }
+        }
+        function isnumberprime(a) {
+            a = + document.getElementById("inputnumber").value;
+            let prime = isprime(a);
+            document.getElementById("ketqua").innerHTML = prime;
+        }
+
+
+
+
+    </script>
+
+</body>
+
+</html>

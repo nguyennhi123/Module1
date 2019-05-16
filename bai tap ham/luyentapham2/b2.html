@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    nhap ban kinh<input type="number" id="bankinh"><br>
+    <input type="button" onclick="dientich()" value="dientich">
+    <p id="dientich"></p>
+    <input type="button" onclick="chuvi()" value="chuvi">
+    <p id="chuvi"></p>
+</body>
+<script>
+    function dientich() {
+        let bankinh = + document.getElementById('bankinh').value;
+        const PI = 3.14;
+        let dientich = bankinh ** 2 * PI;
+        document.getElementById('dientich').innerHTML = 'dientich la: ' + dientich;
+    }
+    function chuvi() {
+        let bankinh = + document.getElementById('bankinh').value;
+        const PI = 3.14;
+        let chuvi = bankinh * 2 * PI;
+        document.getElementById('chuvi').innerHTML = 'chu vi la: ' + chuvi;
+    }
+</script>
+
+</html>

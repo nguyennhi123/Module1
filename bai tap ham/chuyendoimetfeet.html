@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>chuyen doi don vi metters va feet</title>
+</head>
+
+<body>
+    <label>chuyen tu metters sang feet</label>
+    <input type="number" id="metters" placeholder="nhapsomet" oninput="meterToFeet(this.value)"
+        onchange="meterToFeet(this.value)"><span id="ketqua"></span><br><br>
+    <label>chuyen tu feet sang metters</label>
+    <input type="number" id="feet" placeholder="nhapsofeet" oninput="feetToMeter(this.value)"
+        onchange="feetToMeter(this.value)"><span id="ketqua1"></span><br><br>
+</body>
+<script>
+    function meterToFeet(met) {
+        met = + document.getElementById('metters').value;
+        meterToFoot = met * 3.279;
+        document.getElementById('ketqua').innerHTML = ' ' + meterToFoot + ' feet';
+    }
+    function feetToMeter(met) {
+        feet = + document.getElementById('feet').value;
+        feetToMeter = feet * 0.305;
+        document.getElementById('ketqua1').innerHTML = ' ' + feetToMeter + ' metters';
+    }
+
+
+
+
+</script>
+
+</html>
