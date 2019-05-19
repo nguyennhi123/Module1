@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Temperature(doC) {
+            this.doC = doC;
+            this.getDoC = function () {
+                return this.doC
+            }
+            this.getDoF = function () {
+                return doC + " độ C = " + (doC * 1.8 + 32) + " độ F";
+            }
+            this.getDoK = function () {
+                return doC + ' độ C = ' + (doC + 273.18) + ' độ K';
+            }
+
+        }
+        let temperature = new Temperature(25);
+        let doC = temperature.getDoC();
+        let doF = temperature.getDoF();
+        let doK = temperature.getDoK();
+        document.write(doF + '<br>' + doK);
+
+
+    </script>
+</body>
+
+</html>

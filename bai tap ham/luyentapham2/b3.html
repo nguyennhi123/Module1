@@ -33,6 +33,23 @@
         }
 
     }
+    function giaithua(number){
+        let result = 1
+        if(number===0 || number === 1){
+            return result;
+        }else{
+            if(number < 0){
+                return null;
+            }else{
+                for(let i = 1; i<= number;i++){
+                    result *= i;    
+                }return result;
+            }
+        }
+    }
+    let a = prompt('nhap 1 so:');
+    let hienthi = giaithua(a);
+    console.log(hienthi);
 
 </script>
 

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    nhap tao mang<input type="number" id="number">
+    <input type="button" onclick="nhap()" value="nhapmang"><p id="nhapmang"></p>
+    nhap so vao day<input type="number" id="number1">
+    <input type="button" onclick="kiemtra()" value="kiemtra"><p id="kiemtra"></p>
+</body>
+<script>
+    let array = [];
+    let x = 0;
+
+    function nhap(){
+        array[x] = +document.getElementById('number').value;
+            x++;
+            document.getElementById('number').value = '';
+            document.getElementById('nhapmang').innerHTML = array;
+    }
+
+    function kiemtra(){
+        let a = +document.getElementById('number1').value;
+        let count = -1;
+        for(let i = 0; i < array.length; i++){
+            if(a === array[i]){
+                count ++;
+            
+                // document.getElementById('kiemtra').innerHTML = a + ' xuat hien '+ count +' lan';
+            }
+        }
+        
+        if(count === -1) {
+            document.getElementById('kiemtra').innerHTML = a + ' xuat hien '+ count +' lan';
+        } else {
+            count++;
+            document.getElementById('kiemtra').innerHTML = a + ' xuat hien '+ count +' lan';
+        }
+    }
+
+    function findNum (arrayNum, keywork)
+    {
+        let count = -1;
+        for(let i = 0; i < arrayNum.length; i++){
+            if(keywork === arrayNum[i]){
+                count ++;
+            }
+        }
+
+        if(count === -1) return count;
+
+        return ++count;
+    }
+
+    arrayBatKy = [1,2,3,2,3,1,4];
+    let result = findNum(arrayBatKy, 'e');
+    console.log(result);
+</script>
+</html>

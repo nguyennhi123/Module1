@@ -22,14 +22,14 @@
         function isprime(number) {
             if (number < 2) {
                 return "number is not prime"
-            } else {
-                //let count = 0;
-                for (i = 2; i < number - 1; i++) {
-                    if (number % i === 0) {
-                        return "number is not prime"
-                    }
-                } return "number is prime"
             }
+            //let count = 0;
+            for (i = 2; i < number - 1; i++) {
+                if (number % i === 0) {
+                    return "number is not prime"
+                }
+            } return "number is prime"
+
         }
         function isnumberprime(a) {
             a = + document.getElementById("inputnumber").value;

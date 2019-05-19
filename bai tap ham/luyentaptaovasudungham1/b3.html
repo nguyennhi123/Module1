@@ -1,24 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>bai3</title>
 </head>
+
 <body onload="number()">
 
 
 </body>
 <script>
-    function number(){
+    function number() {
         let a = parseInt(prompt('nhap a:'));
         let b = parseInt(prompt('nhap b:'));
-        if(a>b){
-            alert( 'a lon hon b');
-        }else{
-           let sum = a + b;
+        if (a > b) {
+            alert('a lon hon b');
+        } else {
+            let sum = a + b;
             alert('tong cua hai so la:' + sum);
         }
     }
-    
+
+
+    function sosanh(a,b){
+        if(a<b){
+            return 'a nho hon b'
+        }else
+            if(a>b){
+            return 'a lon hon b'
+        }else{
+            return a+b;
+        }
+    }
+    let result = sosanh(2,2);
+    console.log(result);
+
 </script>
+
 </html>

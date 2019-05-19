@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>
+        <label>nhap ki tu</label>
+        <input type="text" id="inputtext" placeholder="inputtext" oninput="kiemtradoixung(this.value)"
+            onchange="kiemtradoixung(this.value)">
+
+    </p>
+    <p><span id="ketqua"></span></p>
+</body>
+<script>
+
+    function ispalindrome(x) {
+        for (i = 0; i < (x.length) / 2; i++) {
+            let long = x.length;
+            if (x.charAt(i) === x.charAt(long - i - 1)) {
+                return true
+
+            }
+            return false;
+        }
+    }
+    function kiemtradoixung(string) {
+        string = document.getElementById('inputtext').value;
+        let palindrome = ispalindrome(string);
+        document.getElementById('ketqua').innerHTML = palindrome;
+    }
+</script>
+
+</html>

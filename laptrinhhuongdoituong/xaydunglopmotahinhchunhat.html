@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="mycanvas" width="1000px" height="700px" style="border:1px solid tomato ;">
+</body>
+<script>
+    function Rectangle(x,y,width,height){
+       this.x = x;
+       this.y = y;
+       this.width = width;
+       this.height = height; 
+
+      this.createRectangle = function(){
+        var canvas = document.getElementById('mycanvas');
+        var ctx = canvas.getContext('2d');
+        // var width = Math.floor(Math.random()*80);
+        // var height = Math.floor(Math.random()*80);
+        var rectangle = new Rectangle(this.x,this.y,this.width,this.height);
+        ctx.beginPath();
+        ctx.fillRect(500,500,width,height);
+        ctx.fill();
+        
+    }
+}
+    let width = parseInt(prompt('nhap so:'));
+    let height = parseInt(prompt('nhap so:'));
+    let rec = new Rectangle(500,500,width,height);
+    rec.createRectangle();
+    let chuvi = (width+height)*2;
+    let dientich = width * height;
+    alert(chuvi +',' +dientich);
+    
+</script>
+</html>

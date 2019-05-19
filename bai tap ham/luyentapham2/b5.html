@@ -10,12 +10,18 @@
 
 <body>
     <script>
-        let numbera = parseInt(prompt("nhap a:"));
-        let numberb = parseInt(prompt("nhap b:"));
-        let numberc = parseInt(prompt("nhap c:"));
-        let min = (numbera < numberb && numbera < numberc) ? numbera + 'la so nho nhat' : (numberb < numberc) ? numberb + 'la so nho nhat' : numberc + 'la so nho nhat';
-        alert(min);
-
+        function minNumber(a,b,c){
+            if(a<b && a<c){
+                return a;
+            }if (b<c){
+                return b;
+            } return c;
+        }
+        let x = prompt('nhap x:');
+        let y = prompt('nhap y:');
+        let z = prompt('nhap z:');
+        let timmin = minNumber(x,y,z);
+        console.log(timmin + 'la so nho nhat');
     </script>
 
 </body>
