@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="adam"></div>
+    <div id="weightAdam"></div>
+    <div id="eva"></div>
+    <div id="weightEva"></div>
+    <div id="weightApple"></div>
+    <input type="button" onclick="adamEat()"  value="adamEat">
+    <input type="button" onclick="evaEat()"  value="evaEat">
+
+    <script>
+        function Apple(weight){
+            this.weight = weight;
+            this.appleWeight = function(){
+                return this.weight;
+            }
+            this.setWeight = function(weight){
+                this.weight = weight;
+            }
+            this.decreaseWeight = function(){
+                if(this.weight > 0){
+                    this.weight --;
+                }
+            }
+        }
+        function Human(name,gender,weight){
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+            this.isMale =function(){
+                if(this.isMale){
+                    return 'male';
+                } return 'female';
+            }
+            this.eat = function(){
+                this.weight++;
+            }
+            this.say = function(){
+                return 'my name is ' + this.name + ' gender ' + this.isMale();
+            }
+            this.humanWeight = function(){
+                return this.weight;
+            }
+
+        }
+        let adam = new Human('adam','male',70);
+        document.getElementById('adam').innerHTML = adam.say();
+        document.getElementById('weightAdam').innerHTML = adam.humanWeight();
+        let eva = new Human('eva','female',50);
+        document.getElementById('eva').innerHTML = eva.say();
+        document.getElementById('weightEva').innerHTML = eva.humanWeight();
+        let apple = new Apple(10);
+        document.getElementById('weightApple').innerHTML = apple.appleWeight();
+        function adamEat(){
+            if(apple.weight>0){
+               adam.eat();
+                apple.decreaseWeight();
+                document.getElementById('weightAdam').innerHTML = adam.humanWeight();
+                document.getElementById('weightApple').innerHTML = apple.appleWeight();
+            }else{
+                alert('het 1 qua tao');
+            }
+        }
+        function evaEat(){
+            if(apple.weight>0){
+               eva.eat();
+                apple.decreaseWeight();
+                document.getElementById('weightEva').innerHTML = eva.humanWeight();
+                document.getElementById('weightApple').innerHTML = apple.appleWeight();
+            }else{
+                alert('het 1 qua tao');
+            }
+        }
+        </script>
+</body>
+</html>
