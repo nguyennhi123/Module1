@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" onclick="on()" id="on" value="on">
+    <input type="button" onclick="off()" id="off" value="off">
+</body>
+<script>
+    function switchButton(status) {
+        this.status = status;
+        this.buttonOn = function () {
+            this.status = true;
+        }
+        this.buttonOff = function () {
+            this.status = false;
+        }
+    }
+
+    function Lamp(status, button) {
+        this.status = status;
+        this.button = button;
+        this.turnOn = function () {
+            button.buttonOn();
+            this.status = true;
+            console.log('lightting');
+        }
+        this.turnOff = function () {
+            button.buttonOff();
+            this.status = false;
+            console.log('not lightting')
+        }
+    }
+
+
+    let button = new switchButton(true);
+
+    let lamp = new Lamp(true, button);
+    function on() {
+        // button.buttonOn();
+        lamp.turnOn();
+        console.log(button.status);
+    }
+
+    function off() {
+        // button.buttonOn();
+        lamp.turnOff();
+        console.log(button.status);
+    }
+
+
+</script>
+
+</html>
