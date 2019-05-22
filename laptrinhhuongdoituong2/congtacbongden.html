@@ -9,49 +9,47 @@
 </head>
 
 <body>
-    <input type="button" onclick="on()" id="on" value="on">
-    <input type="button" onclick="off()" id="off" value="off">
+    <input type="button" onclick="on()"  value="on">
+    <input type="button" onclick="off()"  value="off">
 </body>
 <script>
-    function switchButton(status) {
+    function Lamp(status) {
         this.status = status;
+        this.turnOn = function () {
+            this.status = true;
+            alert('lightting');
+        }
+        this.turnOff = function () {
+            this.status = false;
+            alert('not lightting');
+        }
+    }
+    function switchButton(status, lamp) {
+        this.status = status;
+        this.lamp = lamp;
         this.buttonOn = function () {
             this.status = true;
+            lamp.turnOn();
+            
         }
         this.buttonOff = function () {
             this.status = false;
+            lamp.turnOff();
+            
         }
+        
     }
-
-    function Lamp(status, button) {
-        this.status = status;
-        this.button = button;
-        this.turnOn = function () {
-            button.buttonOn();
-            this.status = true;
-            console.log('lightting');
-        }
-        this.turnOff = function () {
-            button.buttonOff();
-            this.status = false;
-            console.log('not lightting')
-        }
-    }
-
-
-    let button = new switchButton(true);
-
-    let lamp = new Lamp(true, button);
+    let den = new Lamp(false);
+    let button = new switchButton(false,den);   
     function on() {
-        // button.buttonOn();
-        lamp.turnOn();
-        console.log(button.status);
+         button.buttonOn();
+        //console.log(button.status);
     }
 
     function off() {
-        // button.buttonOn();
-        lamp.turnOff();
-        console.log(button.status);
+         button.buttonOff();
+        //lamp.turnOff();
+        //console.log(button.status);
     }
 
 

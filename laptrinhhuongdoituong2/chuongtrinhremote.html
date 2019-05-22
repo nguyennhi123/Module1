@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function Remote(idRemote){
+        this.idRemote = idRemote;
+        this.settivi= function(tivi){
+            this.tivi = tivi;
+        }
+        this.turnOntivi = function(){
+            return this.tivi.turnOn();
+        }
+        this.turnOfftivi = function(){
+            return this.tivi.turnOff();
+        }
+        this.setchaneltivi = function(){
+            return this.tivi.setchanel();
+        }
+        this.volumuptivi = function(){
+            return this.tivi.volumup();
+        }
+        this.volumdowntivi = function(){
+            return this.tivi.volumdown();
+        }
+    }
+    function Tivi(chanel, volum, status){
+        this.chanel = chanel;
+        this.volum = volum;
+        this.status = status;
+        this.getChanel = function(){
+            return this.chanel;
+        }
+        this.setchanel = function(){
+            if(this.status){
+            console.log('chuyen den kenh' + this.chanel)
+        }else{
+            console.log('ti vi dang tat')
+        }
+        }
+        this.getvolum = function(){
+            return this.volum;
+        }
+        this.volumup = function(){
+            if(this.status){
+            if(this.volum<100){
+                this.volum++;
+                console.log( 'volum is' + this.volum);
+            }
+        }else{
+            console.log('ti vi dang tat');
+        }
+        }
+        this.volumdown = function(){
+            if(this.status = true){
+            if(this.volum>0){
+                this.volum--;
+                console.log( 'volum is' + this.volum);
+            }
+        }else{
+            console.log('ti vi dang tat');
+        }
+        }
+        this.turnOn = function(){
+            this.status = true;
+            console.log('tivi dang bat');
+        }
+        this.turnOff = function(){
+            this.status = false;
+            console.log('tivi dang tat');
+
+            }
+    
+    }
+    let tivi = new Tivi(1, 90, false);
+    let remote = new Remote("samsung");
+    remote.settivi(tivi);
+    tivi.turnOn();
+    tivi.chanel = 7;
+    tivi.setchanel(); 
+    tivi.chanel = 3;  
+    remote.setchaneltivi();
+    tivi.volumup();
+    tivi.volumup();
+    remote.turnOfftivi();
+
+    
+    
+</script>
+</html>
