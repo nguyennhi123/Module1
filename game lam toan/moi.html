@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function myFunction(a) {
+
+            if (Number.isInteger(a)) {
+                return ' la so nguyen';
+            }
+            return ' k la so nguyen';
+
+        }
+        let text = prompt('nhap a:');
+        let hienthi = myFunction(text);
+        document.write(text + hienthi);
+    </script>
+</body>
+
+</html>

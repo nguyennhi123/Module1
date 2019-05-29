@@ -11,14 +11,12 @@
 <body>
     <p>
         <label>nhap ki tu</label>
-        <input type="text" id="inputtext" placeholder="inputtext" oninput="kiemtradoixung(this.value)"
-            onchange="kiemtradoixung(this.value)">
+        <input type="text" id="inputtext" placeholder="inputtext" oninput="kiemtradoixung(this.value)" onchange="kiemtradoixung(this.value)">
 
     </p>
     <p><span id="ketqua"></span></p>
 </body>
 <script>
-
     function ispalindrome(x) {
         for (i = 0; i < (x.length) / 2; i++) {
             let long = x.length;
@@ -29,6 +27,7 @@
             return false;
         }
     }
+
     function kiemtradoixung(string) {
         string = document.getElementById('inputtext').value;
         let palindrome = ispalindrome(string);

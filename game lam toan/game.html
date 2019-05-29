@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>game be tap lam toan</title>
+    <style>
+        .ctable {
+            padding-left: 500px;
+            height: 300px;
+        }
+        
+        table {
+            border: 2px black solid;
+            margin-top: 40px;
+            height: 400px;
+            width: 349px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="ctable" style="position: fixed;">
+        <h1 style="position: absolute; left: 434px; top: 0px; color: blue; width: 500px;">GAME: BÉ TẬP LÀM TOÁN</h1><br>
+        <table>
+            <tr>
+                <td colspan="3" style="text-align:center">
+                    <input type="button" class="btn btn-success" value="New Game" onClick="location.reload();"> &ensp;
+                    <input type="button" class="btn btn-success" value="Start" size="5" onClick="startGame()">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" style="text-align:center"></td>
+            </tr>
+            <tr>
+                <form name="math">
+                    <td colspan="3" style="text-align:center ;font-size:3; color:#0000FF">
+                        <b>Time:</b>
+                        <input type="text" name="timer" size="5">
+                    </td>
+            </tr>
+            <tr>
+                <td style="text-align:right; font-size: 3 ;color: #0000FF">
+                    <b>Question:</b>
+                    <input type="text" name="firstnum" size="5">
+                </td>
+
+                <td style="text-align: center"><input type="text" name="operator" size="2"></td>
+                <td style="text-align: left"><input type="text" name="secondnum" size="5"></td>
+            </tr>
+            <tr>
+                <td colspan="3" style="text-align: center ;size:3px; color:#0000FF">
+                    <hr>
+                    <b>Result:</b>
+                    <input type="number" name="answer" size="5"> <input type="button" class="btn btn-success" value="Answer" onClick="answerit();">
+                    <hr>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" style="text-align: center;color:#0000FF ;font: Arial, Helvetica, Sans Serif; size: 3;color:#0000FF ">
+                    <b>Corrects:</b>
+                    <input type="text" name="points" size="5" value="0">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" id="dapan" style="color: red; text-align: center"></td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    </form>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+<script>
+    var time = 20;
+    var timesup = 0;
+    var started = 0;
+
+    function countDown() {
+        if (time > 0) {
+            document.math.timer.value = time;
+            time = time - 1;
+            var gameTimer = setTimeout("countDown()", 1000)
+        } else
+        if (time == 0) {
+            document.math.timer.value = "0";
+            timesup = 1; {
+                var audio = new Audio('het gio.mp3');
+                audio.play();
+            }
+            document.math.firstnum.value = "";
+            document.math.operator.value = "";
+            document.math.secondnum.value = "";
+            document.math.answer.value = "";
+        }
+    }
+
+    function startGame() {
+        if (started != 0) { //khi da bat dau
+            var audio = new Audio('dabatdau.mp3');
+            audio.play();
+        } else {
+
+            started = 1;
+            countDown();
+            getProb();
+            var audio = new Audio('bat dau.mp3');
+            audio.play();
+        }
+    }
+
+    function randNum(min, max) {
+        var num = Math.round(Math.random() * (max - min)) + min;
+        return num;
+    }
+
+    var choose, rightanswer
+
+    function getProb() {
+        choose = randNum(1, 4);
+        if (choose === 1) {
+            document.math.operator.value = "+";
+            var choose1 = randNum(0, 20);
+            var choose2 = randNum(0, 20);
+            document.math.firstnum.value = choose1;
+            document.math.secondnum.value = choose2;
+            rightanswer = choose1 + choose2;
+        }
+        if (choose === 2) {
+            document.math.operator.value = "-";
+            var choose2 = randNum(0, 20);
+            var choose1 = randNum(choose2, 20);
+            document.math.firstnum.value = choose1;
+            document.math.secondnum.value = choose2;
+            rightanswer = choose1 - choose2;
+        }
+        if (choose === 3) {
+            document.math.operator.value = "x";
+            var choose1 = randNum(0, 5);
+            var choose2 = randNum(0, 10);
+            document.math.firstnum.value = choose1;
+            document.math.secondnum.value = choose2;
+            rightanswer = choose1 * choose2;
+        }
+        if (choose === 4) {
+            document.math.operator.value = "/";
+            var choose2 = randNum(1, 5);
+            var choose1 = choose2 * randNum(0, 10);
+            document.math.firstnum.value = choose1;
+            document.math.secondnum.value = choose2;
+            rightanswer = choose1 / choose2;
+        }
+        document.math.answer.select();
+    }
+
+    function answerit() {
+        document.getElementById("dapan").innerHTML = "";
+        if (started == 0) //chua bam start
+        {
+            alert('You Must Click The Button Labeled \'Start\'!');
+        } else {
+            if (timesup != 0) //khi 'da het gio' đã chạy.
+            {
+                document.math.timer.value = "0"; {
+                    var audio = new Audio('het gio.mp3');
+                    audio.play();
+                }
+            } else {
+                var theiranswer = eval(document.math.answer.value);
+                var theirpoints = eval(document.math.points.value);
+                if (theiranswer == null) {
+                    {
+                        var audio = new Audio('diendapan.mp3');
+                        audio.play();
+                    }
+                    document.math.answer.select(); //khi click vao answerit thi trỏ đến ô trả lời;
+
+
+                } else {
+                    if (theiranswer == rightanswer) {
+                        var audio = new Audio('hoan ho.mp3');
+                        audio.play();
+                        //alert('Right');                       
+                        theirpoints++;
+                        document.math.points.value = theirpoints;
+                        getProb();
+                        document.math.answer.value = "";
+                        document.math.answer.select();
+                    } else {
+                        var audio = new Audio('traloisairoi.mp3');
+
+                        audio.play()
+                        document.getElementById("dapan").innerHTML = (rightanswer + " mới đúng nhé bé!")
+                        document.math.answer.select();
+                        getProb();
+                        document.math.answer.value = "";
+
+
+                    }
+                }
+            }
+        }
+    }
+</script>
+
+</html>
